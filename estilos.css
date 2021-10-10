@@ -1,0 +1,117 @@
+.tarjeta{
+  position: relative;
+  width: 600px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.tarjeta .cir{
+  position:absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tarjeta .cir::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #d83133;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+
+.tarjeta:hover .cir::before{
+  background: #0065c3;
+  clip-path: circle(400px at center);
+}
+
+.tarjeta img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 300px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.tarjeta:hover img{
+  left: 72%;
+  height: 500px;
+}
+
+.tarjeta .contenido{
+  position: relative;
+  width: 50%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tarjeta:hover .contenido{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.tarjeta .contenido h3{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+
+.tarjeta .contenido p{
+  color:#fff;
+
+}
+
+.tarjeta .contenido a{
+  position: relative;
+  color:#fff;
+  padding: 10px  20px;
+  border-radius: 10px;
+  background: #eee;
+  color: #111;
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 991px){
+  .tarjeta{
+    width: auto;
+    max-width: 350px;
+    align-items: flex-start;
+  }
+  .tarjeta:hover{
+    height: 600px;
+  
+  }
+
+  .tarjeta .contenido{
+    width: 100%;
+    left: 0;
+    padding:40px;
+
+  }
+
+  .tarjeta:hover img{
+    top: 70%;
+    left: 50%;
+    height: 350px;
+  }
+
+}
